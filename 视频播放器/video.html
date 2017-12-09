@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="fontAwesome/css/font-awesome.css" />
+		<style>
+			*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body {
+			width: 100%;
+			height: 1200px;
+			position: relative;
+		}
+		
+			.box{
+				width: 920px;
+				height: 445px;
+				margin: 30px auto;
+				/*border: 1px solid ;*/
+				box-shadow: 0px 0px 20px 2px darkslategray;
+				background-color: grey;
+				border-radius: 10px;
+			
+			
+			}
+			.left{
+				width:700px ;
+				height: 445px;
+				float: left;
+				position: relative;
+			
+				
+				
+			}
+			#bck{
+				width:700px ;
+				height: 393px;
+				border-radius: 10px;
+				
+				background-color: lightgray;
+			
+			}
+			.left .buttom{
+				width: 700px;
+				height: 10px;
+				background-color: #fff;
+				position: absolute;
+				bottom: 80px;
+				left: 0px;
+				cursor: pointer;
+				display: none;
+				z-index: 8;
+			}
+			.left .buttom  .b1{
+				width: 700px;
+				height: 10px;
+				background-color: greenyellow;
+				
+			}
+			#ico{
+				width:700px;
+				height: 50px;
+				line-height: 50px;
+	    border: 1px solid grey;
+			}
+			
+			#ico span{
+				font-size: 20px;
+				display: block;
+				float: left;
+				color:#000 ;
+				line-height: 50px;
+				width: 60px;
+				text-align: center;
+			}
+			#ico span:hover{
+				color: #fff;
+			}
+			#ico a{
+				width: 100px;
+				height: 50px;
+				text-decoration: none;
+				color: #666;
+				float: left;
+				
+			}
+			#ico-1{
+				width: 150px;
+				height: 50px;
+				float: left;
+				border: none;
+			}
+			#ico .tiao{
+				
+				width: 80px;
+				height: 5px;
+				float: left;
+				margin-top: 22px;
+				background-color: lightgray;
+				/*position: relative;*/
+				cursor: pointer;
+				
+			}
+			#ico .tiao1{
+				width: 50px;
+				height: 5px;
+
+				background-color: dodgerblue;
+				
+			}
+			#ico #off{
+				width: 30px;
+				margin-top:-27px;
+				
+				margin-left: 90px;
+			}
+			#ico #up{
+				width: 30px;
+				height: 35px;
+
+		
+			}
+			#ico #full{
+				width: 50px;float: right;
+		
+			}
+			.video{
+				width: 700px;
+				height: 395px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 3;
+				
+				/*overflow: hidden;*/
+			}
+			.box2{
+				width: 700px;
+				height: 395px;
+				margin: 20px auto;
+				background-color: transparent;
+				/*opacity: .1;*/
+				position: absolute;
+				overflow: hidden;
+				display: none;
+				top: 0px;
+				left: 0px;
+				z-index: 4;
+			}
+			.ball{	
+				padding:3px ;
+				position: absolute;
+				display: block;
+				height: 20px;
+				/*opacity: 1;*/
+				
+				width: 220px;
+				margin:30px;
+				color: red;
+			}
+			
+			.right{
+					width: 210px;
+				height: 400px;
+				float: right;
+			}
+			.right ul{
+				width: 210px;
+				height: 400px;
+				padding: 20px 0px;
+				box-sizing: border-box;
+				list-style: none;
+				
+			}
+			.right ul li{
+				width: 210px;
+				height: 25px;
+				font-size: 12px;
+				line-height: 25px;
+				cursor: pointer;
+				color: #fff;
+			}
+			.right ul li:hover{
+				background-color: #666;
+}
+			.right ul li span{
+				width: 150px;
+				height: 25px;
+				font-size: 12px;
+				line-height: 30px;
+				color: #fff;
+				float: left;
+				margin-left: 10px;
+				text-align: left;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			.right ul li p{
+			
+				width: 30px;
+				height: 25px;
+				font-size: 12px;
+				line-height: 25px;
+				color: #fff;
+				float: left;
+			}
+			#cd1{
+				border: 1px solid;
+			
+				position:fixed;
+				right:0px;
+				bottom: 0px;
+				display: none;
+			}
+			</style>
+	</head>
+	<body>
+		<canvas id="cd1" width="300"height="200"></canvas>
+		<div class="box">
+
+			
+			<div class="left">
+				<video class="video" src="video/01.mp4" loop="loop" data-setup='{
+			controls:false,
+			
+		}'></video>
+		<div class="box2">
+					
+				</div>
+				<div id="bck">
+				<div class="buttom">
+						<div class="b1"></div>
+					</div>
+				</div>
+				
+				<div id="ico">
+					<span onclick="stopward()" id="p1"class="fa fa-stop-circle"></span>
+				
+					<span onclick="backward()" class="fa fa-backward"></span>
+					<span  id="play" class="fa fa-play"></span>
+					<span  onclick="forward()"class="fa fa-forward"></span>
+					<a id="currenttime">00:00:00</a>
+					<a id="toaltime">00:00:00</a>
+					<div id="ico-1">
+				<span  id="up"class="fa fa-volume-off"></span>			
+				<div class="tiao">
+				<div class="tiao1"></div>		
+				</div>
+				<span  id="off"class="fa fa-volume-up"></span>
+				
+				</div>
+				<span  id="say">弹幕</span>
+				<span  id="full"class="fa fa-arrows-alt"></span>
+				
+				
+				</div>
+				</div>
+		
+			<div class="right">
+				<ul>
+					<!--<li><span>十年</span><p>00:00</p></li>
+					<li><span>动物世界</span><p>00:00</p></li>-->
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="sp.js"></script>
+</html>
