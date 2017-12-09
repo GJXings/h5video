@@ -1,5 +1,5 @@
 h5视频播放器详情
-
+项目地址 ：https://gjxings.github.io/h5video/%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E5%99%A8/video.html
 此demo没有借助框架，插件。基于H5和原生JS开发。 由于早期写的h5视频播放器，代码规范不是特别严格，显得有点low，后期请关注00思想版本的demo 动态加载播放列表 载入视频信息 改变片名 list_title.innerHTML = movie.name;
 
  改变片名路径
